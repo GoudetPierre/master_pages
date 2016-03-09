@@ -1,0 +1,19 @@
+<%= form_for(@production) do |f| %>
+  <% if @production.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@production.errors.count, "error") %> prohibited this production from being saved:</h2>
+      <ul>
+      <% @production.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.text_field :productionType, class: 'form-control' %>    
+    
+  <div class="actions">   
+    <%= f.submit "この内容を登録す", class:'btn btn-primary' %>
+  </div> 
+  
+<% end %>

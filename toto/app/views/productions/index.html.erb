@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-6 col-md-offset-6">
+    <h2>マスタ【制作タイプ】</h2>
+    <%= render 'form' %>
+</div>
+
+<h2>制作タイプ一覧</h2>
+
+<table style=" width 100%" class:"productions">
+    <thead>
+        <th>  </th>
+        <th> 制作タイ</th>
+    </thead>
+    <tbody>
+        <tr>
+            <%= render @productions %>
+        </tr>
+    </tbody>
+</table>
