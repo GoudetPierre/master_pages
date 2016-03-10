@@ -7,14 +7,18 @@
 
 <h2>制作タイプ一覧</h2>
 
-<table style=" width 100%" class:"productions">
-    <thead>
-        <th>  </th>
-        <th> 制作タイ</th>
-    </thead>
-    <tbody>
-        <tr>
-            <%= render @productions %>
-        </tr>
-    </tbody>
-</table>
+
+<%= form_tag destroy_multiple_productions_path, :method => :delete do %>
+    <table style=" width 100%" class:"productions">
+        <thead>
+            <th><%= check_box_tag "" %></th>
+            <th> 制作タイプ</th>
+            <th>編集</th>
+          
+        </thead>
+        <tbody>         
+            <%= render @productions %>              
+        </tbody>
+    </table>
+    <%= submit_tag "一括削除", class: 'btn btn-primary' %>
+<% end %>

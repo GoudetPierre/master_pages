@@ -1,14 +1,11 @@
-<tr>
+<tr>  
     <td>
-        <div class="checkbox">
-            <label><input type="checkbox" value=""></label>
-        </div>
+   <%= check_box_tag "ids[]", production.id %>
+   </td>
+    <td>
+        <%= link_to production.productionType, production %>
     </td>
     <td>
-        <% production.productionType %>
+       <%= link_to 'Edit', edit_production_path(production) %>
     </td>
-     <td>
-        <%= link_to 'Edit', edit_production_path(production) %>
-        <%= link_to 'Destroy', production, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </td>
-</tr>
+</tr>  
