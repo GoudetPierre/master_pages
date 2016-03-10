@@ -70,7 +70,7 @@ class ProductionsController < ApplicationController
         end
     else
         respond_to do |format|
-            format.html { redirect_to productions_url, notice: 'No production selected to be deleted' }
+            format.html { redirect_to productions_url, info: 'No production selected to be deleted' }
             format.json { head :no_content }
         end
       end

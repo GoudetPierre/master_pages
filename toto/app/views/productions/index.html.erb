@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <div class="col-md-6 col-md-offset-6">
-    <h2>マスタ【制作タイプ】</h2>
-    <%= render 'form' %>
+  <h2>マスタ【制作タイプ】</h2>
+  <%= render 'form' %>
 </div>
 
 <h2>制作タイプ一覧</h2>
 
 
-<%= form_for (@production) do |f| %>
-    <table style=" width 100%" class:"productions">
-        <thead>
-            <th><%= check_box_tag "" %></th>
-            <th> 制作タイプ</th>
-            <th>編集</th>
-        </thead>
-        
-        <tbody> 
-            <% @production.each do |prod|%>
-            <td></td>                    
-        </tbody>
-    </table>
-    <%= f.submit "一括削除", class: 'btn btn-primary' %>
+<%= form_tag destroy_multiple_productions_path, :method => :delete  do %>
+<table style=" width 100%" class:"productions">
+  <thead>
+    <th><%= check_box_tag "" %></th>
+    <th> 制作タイプ</th>
+    <th>編集</th>
+  </thead>
+  
+  <tbody> 
+    <tr>
+      <%= render @productions %>
+    </tr>
+  </tbody>
+</table>
+<%= submit_tag "一括削除", class: 'btn btn-primary' %>
 <% end %>
