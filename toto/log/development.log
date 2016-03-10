@@ -12512,3 +12512,253 @@ ActionController::RoutingError (No route matches [GET] "/professors"):
   Rendered C:/Ruby21/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
   Rendered C:/Ruby21/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
   Rendered C:/Ruby21/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.0ms)
+
+
+Started POST "/productions" for ::1 at 2016-03-10 13:18:44 +0900
+Processing by ProductionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XbR8ADPcJvBZgLBWZ0qP7pY3yHnUrZOS2q/gBZ1mGs03NITNMDEu4izIJLyE5bVGrZvtOS3HaSCTX7wNZS2MRA==", "production"=>{"productionType"=>"ぷろもしおｎ"}, "commit"=>"この内容を登録す"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduction Exists (0.0ms)[0m  SELECT  1 AS one FROM "productions" WHERE "productions"."productionType" = 'ぷろもしおｎ' LIMIT 1
+  [1m[36mSQL (15.0ms)[0m  [1mINSERT INTO "productions" ("productionType", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["productionType", "ぷろもしおｎ"], ["created_at", "2016-03-10 04:18:44.595923"], ["updated_at", "2016-03-10 04:18:44.595923"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/productions/13
+Completed 302 Found in 128ms (ActiveRecord: 24.0ms)
+
+
+Started GET "/productions/13" for ::1 at 2016-03-10 13:18:44 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProduction Load (1.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered productions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 188ms (Views: 182.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:18:46 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (10.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (0.0ms)
+  Rendered productions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 170ms (Views: 170.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions/13" for ::1 at 2016-03-10 13:18:49 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProduction Load (0.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered productions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 309ms (Views: 308.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:18:50 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (0.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (0.0ms)
+  Rendered productions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 180ms (Views: 180.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions/13/edit" for ::1 at 2016-03-10 13:18:52 +0900
+Processing by ProductionsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProduction Load (0.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered productions/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 234ms (Views: 232.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/productions/13" for ::1 at 2016-03-10 13:19:15 +0900
+Processing by ProductionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Hj3KwOedu/ET644lOp8n0wwt82DZ9DG/koKtSw++WyC+A/mAHN+/bEHOtJ3RUY3d5ySjXoNKnS3ula91HVv5Q==", "production"=>{"productionType"=>"プロモーション"}, "commit"=>"タイプ名　編集", "id"=>"13"}
+  [1m[35mProduction Load (1.0ms)[0m  SELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduction Exists (1.0ms)[0m  SELECT  1 AS one FROM "productions" WHERE ("productions"."productionType" = 'プロモーション' AND "productions"."id" != 13) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "productions" SET "productionType" = ?, "updated_at" = ? WHERE "productions"."id" = ?[0m  [["productionType", "プロモーション"], ["updated_at", "2016-03-10 04:19:15.581258"], ["id", 13]]
+  [1m[35m (6.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/productions/13
+Completed 302 Found in 19ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/productions/13" for ::1 at 2016-03-10 13:19:15 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProduction Load (0.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered productions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 157ms (Views: 155.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:19:17 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (0.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (0.0ms)
+  Rendered productions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 160ms (Views: 160.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/productions" for ::1 at 2016-03-10 13:19:54 +0900
+Processing by ProductionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ulCR1EppNYMPRsZ7zx11yBaNLNwP4HWGVd3C1gCDhRzQ0GkZSYQ9kXoOUpEssk9gLSEJnPaKjzQcLZ7e+MgTlQ==", "production"=>{"productionType"=>"コーポレートサイト"}, "commit"=>"この内容を登録す"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduction Exists (0.0ms)[0m  SELECT  1 AS one FROM "productions" WHERE "productions"."productionType" = 'コーポレートサイト' LIMIT 1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "productions" ("productionType", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["productionType", "コーポレートサイト"], ["created_at", "2016-03-10 04:19:54.081488"], ["updated_at", "2016-03-10 04:19:54.081488"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/productions/14
+Completed 302 Found in 34ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/productions/14" for ::1 at 2016-03-10 13:19:54 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mProduction Load (0.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 14]]
+  Rendered productions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 174ms (Views: 172.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:20:16 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (1.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (1.0ms)
+  Rendered productions/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 178ms (Views: 177.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/productions" for ::1 at 2016-03-10 13:20:30 +0900
+Processing by ProductionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A4SutDupBmsQr1P7y/O+fwmDQ9g4EHRRskHIWpXFp99pBFZ5OEQOeWXnxxEoXITXMi9mmMF6juP7sZRSbY4xVg==", "production"=>{"productionType"=>"ＥＣサイト"}, "commit"=>"この内容を登録す"}
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduction Exists (0.0ms)[0m  SELECT  1 AS one FROM "productions" WHERE "productions"."productionType" = 'ＥＣサイト' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "productions" ("productionType", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["productionType", "ＥＣサイト"], ["created_at", "2016-03-10 04:20:30.289662"], ["updated_at", "2016-03-10 04:20:30.289662"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/productions/15
+Completed 302 Found in 26ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/productions/15" for ::1 at 2016-03-10 13:20:30 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mProduction Load (1.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered productions/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 171ms (Views: 168.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:20:31 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (1.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (1.0ms)
+  Rendered productions/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 117ms (Views: 115.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/productions" for ::1 at 2016-03-10 13:20:42 +0900
+Processing by ProductionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WpjCZ90968+qHMJ6EfX0/K6iU2Iqh5FauVtcxqil1mf6pvEnJn/vUvg5+ML6O17yRasDXHA5PcjFTF74ukB0A==", "production"=>{"productionType"=>"ＷＥＢシステム"}, "commit"=>"この内容を登録す"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduction Exists (0.0ms)[0m  SELECT  1 AS one FROM "productions" WHERE "productions"."productionType" = 'ＷＥＢシステム' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "productions" ("productionType", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["productionType", "ＷＥＢシステム"], ["created_at", "2016-03-10 04:20:42.349781"], ["updated_at", "2016-03-10 04:20:42.349781"]]
+  [1m[35m (37.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/productions/16
+Completed 302 Found in 55ms (ActiveRecord: 38.0ms)
+
+
+Started GET "/productions/16" for ::1 at 2016-03-10 13:20:42 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mProduction Load (0.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered productions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 175ms (Views: 158.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:20:43 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (0.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (0.0ms)
+  Rendered productions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 143ms (Views: 142.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/productions" for ::1 at 2016-03-10 13:20:55 +0900
+Processing by ProductionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pQoAL5PlE+xmBSgZ3liVgeiPKf8bAIclPKaHbaTGjhjPivjikAgb/hNNvPM9968p0yMMv+JqfZd1VttlXI0YkQ==", "production"=>{"productionType"=>"組み込み"}, "commit"=>"この内容を登録す"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduction Exists (1.0ms)[0m  SELECT  1 AS one FROM "productions" WHERE "productions"."productionType" = '組み込み' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "productions" ("productionType", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["productionType", "組み込み"], ["created_at", "2016-03-10 04:20:55.100894"], ["updated_at", "2016-03-10 04:20:55.100894"]]
+  [1m[35m (17.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/productions/17
+Completed 302 Found in 25ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/productions/17" for ::1 at 2016-03-10 13:20:55 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mProduction Load (0.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered productions/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 150ms (Views: 148.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:20:56 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (0.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (63.0ms)
+  Rendered productions/index.html.erb within layouts/application (65.0ms)
+Completed 200 OK in 173ms (Views: 173.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/productions" for ::1 at 2016-03-10 13:21:08 +0900
+Processing by ProductionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJJez47z41q5ut+hr14xJ22FstiPE76RYrTqFf6lsg0GEqYCjR7rSMzyS0tM8QuPVimXmHZ5RCMrRLYdBu4khA==", "production"=>{"productionType"=>"ＡＳＰ利用"}, "commit"=>"この内容を登録す"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduction Exists (0.0ms)[0m  SELECT  1 AS one FROM "productions" WHERE "productions"."productionType" = 'ＡＳＰ利用' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "productions" ("productionType", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["productionType", "ＡＳＰ利用"], ["created_at", "2016-03-10 04:21:08.274020"], ["updated_at", "2016-03-10 04:21:08.274020"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/productions/18
+Completed 302 Found in 14ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/productions/18" for ::1 at 2016-03-10 13:21:08 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mProduction Load (0.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 18]]
+  Rendered productions/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 193ms (Views: 192.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:21:09 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (0.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (0.0ms)
+  Rendered productions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 131ms (Views: 121.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/productions" for ::1 at 2016-03-10 13:22:38 +0900
+Processing by ProductionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0gOml5rwy5UxTTYSi/cIVWFtAuedbgXwXQRZE1YzPda4g15amR3Dh0QFovhoWDL9WsEnp2QE/0IU9AUbrnirXw==", "production"=>{"productionType"=>"運用保守対応"}, "commit"=>"この内容を登録す"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduction Exists (0.0ms)[0m  SELECT  1 AS one FROM "productions" WHERE "productions"."productionType" = '運用保守対応' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "productions" ("productionType", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["productionType", "運用保守対応"], ["created_at", "2016-03-10 04:22:38.158709"], ["updated_at", "2016-03-10 04:22:38.158709"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/productions/19
+Completed 302 Found in 19ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/productions/19" for ::1 at 2016-03-10 13:22:38 +0900
+Processing by ProductionsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mProduction Load (0.0ms)[0m  [1mSELECT  "productions".* FROM "productions" WHERE "productions"."id" = ? LIMIT 1[0m  [["id", 19]]
+  Rendered productions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 182ms (Views: 179.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productions" for ::1 at 2016-03-10 13:22:39 +0900
+Processing by ProductionsController#index as HTML
+  Rendered productions/_form.html.erb (0.0ms)
+  [1m[35mProduction Load (0.0ms)[0m  SELECT "productions".* FROM "productions"
+  Rendered productions/_production.html.erb (0.0ms)
+  Rendered productions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 143ms (Views: 142.0ms | ActiveRecord: 0.0ms)

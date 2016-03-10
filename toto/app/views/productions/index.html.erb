@@ -8,17 +8,18 @@
 <h2>制作タイプ一覧</h2>
 
 
-<%= form_tag destroy_multiple_productions_path, :method => :delete do %>
+<%= form_for (@production) do |f| %>
     <table style=" width 100%" class:"productions">
         <thead>
             <th><%= check_box_tag "" %></th>
             <th> 制作タイプ</th>
             <th>編集</th>
-          
         </thead>
-        <tbody>         
-            <%= render @productions %>              
+        
+        <tbody> 
+            <% @production.each do |prod|%>
+            <td></td>                    
         </tbody>
     </table>
-    <%= submit_tag "一括削除", class: 'btn btn-primary' %>
+    <%= f.submit "一括削除", class: 'btn btn-primary' %>
 <% end %>
